@@ -15,6 +15,7 @@ This repository contains a collection of Docker templates for various applicatio
   - Apache all in one ([More informations](apache/apache_all_in_one/README.md))
   - Apache with no cache
   - Apache with no cache and with custom 404 page
-- MariaDB with PhpMyAdmin
-- MySQL with PhpMyAdmin
-- Apache with MariaDB and PhpMyAdmin
+  - Apache with MariaDB and PhpMyAdmin
+- MariaDB
+- MySQL
+- PhpMyAdmin as compose override (put it in the same directory as the DB's docker-compose.yml and change the `PMA_HOST` variable)
