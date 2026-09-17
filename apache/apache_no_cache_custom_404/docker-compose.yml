@@ -9,7 +9,7 @@ services:
       - "80:80"
     volumes:
       # Mounts are in read only to prevent changes by the container (eg if any vulnerability is exploited allowing the container to write to the host in the mounted directory/file)
-      - ./res:/var/www/html:ro # Directory with files to serve
+      - ../common/res:/var/www/html:ro # Directory with files to serve
       - ./conf/apache2.conf:/etc/apache2/apache2.conf:ro # Apache configuration file with:
                                                          # header with cache exipry backdated to prevent caching (rows 175-177))
       - ./conf/000-default.conf:/etc/apache2/sites-available/000-default.conf:ro # Interfaces configuration with custom 404 error page (row 1)
