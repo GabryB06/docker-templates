@@ -1,0 +1,25 @@
+# Root DB credentials:
+# User: root
+# Password: root
+
+# WARNING: Enabling MYSQL_ALLOW_EMPTY_PASSWORD is HIGHLY INSECURE!
+# This setting allows the root user to access the database without a password, posing a serious security risk.
+# Use only in trusted, isolated, and temporary environments (e.g., local development).
+# Instead, prefer setting a strong password with MYSQL_ROOT_PASSWORD (and don't use the example's default one).
+
+# https://github.com/GabryB06/docker-templates/tree/main
+
+services:
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    environment:
+      #MYSQL_ROOT_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      # https://dev.mysql.com/doc/refman/5.7/en/environment-variables.html
+    ports:
+      - 127.0.0.1:3306:3306
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./socket:/var/run/mysqld/
